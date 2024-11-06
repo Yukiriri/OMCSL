@@ -9,9 +9,9 @@
 
 # 讲解汇总
 
-- [运行效果](./readme/test-summary.md)
-- [对比Aikar's Flags](./readme/aikar-g1gc.md)
-- [经验总结](./readme/my-gc.md)
+- [运行效果](./md/test-summary.md)
+- [对比Aikar's Flags](./md/aikar-g1gc.md)
+- [经验总结](./md/my-gc.md)
 
 # 计划功能
 
