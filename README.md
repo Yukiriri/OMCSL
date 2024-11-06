@@ -31,19 +31,29 @@ git clone https://github.com/Yukiriri/OMCSL.git
 - [Liberica JDK](https://bell-sw.com/pages/downloads/)
 - [Zulu JDK](https://www.azul.com/downloads/?package=jdk#zulu)
 
-命令格式：omcsl \<core\> \<Xmx\> [ \<GC\> [ yggdrasil ] ]
-- `core`：服务端jar文件名 或者 MOD加载器的启动@txt
-- `Xmx`：堆内存大小
-- `GC`：可选以下（区分大小写）：
-  - `auto`：使用脚本内的简单判断规则自动选择（默认）
-  - `gc8`：使用Java8开始可用的GC预设
-  - `gc11`：使用Java11开始可用的GC预设
-  - `gc21`：使用Java21开始可用的GC预设
-  - `gc21c`：使用Java21开始可用的GC预设，以更高CPU占用把堆内存水位控制在最低
-- `yggdrasil`：可选以下（区分大小写）：
-  - `ls`：修改yggdrasil为littleskin
-> [!IMPORTANT]
-> 使用`yggdrasil`参数需要在上级目录放置`authlib-injector.jar`
+命令格式：
+  omcsl \<core\> \<Xmx\> [ \<GC\> [ yggdrasil ] ]
+  - `core`：服务端jar文件名 或者 MOD加载器的启动@txt
+  - `Xmx`：堆内存大小
+  - `GC`：可选以下（区分大小写）：
+    - `auto` <br/>
+      使用脚本内的简单判断自动选择（默认）
+    - `gc8` <br/>
+      使用Java8开始可用的GC预设 <br/>
+      有一定的暂停时间，GC负载全程都比较低 <br/>
+    - `gc11` <br/>
+      使用Java11开始可用的GC预设 <br/>
+      暂停时间基本上在3毫秒，GC负载高 <br/>
+    - `gc21` <br/>
+      使用Java21开始可用的GC预设 <br/>
+      暂停时间基本上在0.1毫秒，GC负载只高了一些 <br/>
+    - `gc21c` <br/>
+      和上面的gc21相同 <br/>
+      但以更高CPU占用把堆内存水位控制在最低 <br/>
+  - `yggdrasil`：可选以下（区分大小写）：
+    - `ls`：修改yggdrasil为littleskin
+  > [!IMPORTANT]
+  > 使用`yggdrasil`参数需要在上级目录放置`authlib-injector.jar`
 
 环境变量参数：
 - `JAVA_BIN`：自定义java路径
@@ -57,13 +67,13 @@ git clone https://github.com/Yukiriri/OMCSL.git
     ```
     omcsl purpur.jar 4G gc8
     ```
-  - 分配4G的堆，选择GC8，修改yggdrasil为littleskin
-    ```
-    omcsl purpur.jar 4G gc8 ls
-    ```
   - 分配4G的堆，自动选择GC，修改yggdrasil为littleskin
     ```
     omcsl purpur.jar 4G auto ls
+    ```
+  - 分配4G的堆，选择GC8，修改yggdrasil为littleskin
+    ```
+    omcsl purpur.jar 4G gc8 ls
     ```
   - 使用环境变量
     - Windows bat脚本
