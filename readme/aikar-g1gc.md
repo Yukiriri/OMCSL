@@ -10,7 +10,9 @@ https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-mine
 # 运行情况
 ![](./img/aikar-g1-load.png)
 ![](./img/aikar-g1-usage.png)
+GC日志中平均暂停时间30ms
 
 # 和我的对比
 ![](./img/my-g1-load.png)
 ![](./img/my-g1-usage.png)
+GC日志中平均暂停时间40ms
