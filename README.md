@@ -5,6 +5,7 @@
 </div>
 
 一个自动化选择MC通用优化的启动脚本，使用自适应公式根据可用资源计算低暂停与总负载的平衡点。<br/>
+如果遇到问题或者有更好的调优，欢迎提出。<br/>
 
 # 讲解汇总
 
@@ -59,19 +60,19 @@ git clone https://github.com/Yukiriri/OMCSL.git
 - `JAVA_BIN`：自定义java路径
 
 命令样例：
-  - 分配4G的堆，自动选择GC，不修改yggdrasil
+  - 分配4G的堆，自动选择gc，不修改yggdrasil
     ```
     omcsl purpur.jar 4G
     ```
-  - 分配4G的堆，选择GC8，不修改yggdrasil
+  - 分配4G的堆，选择gc8，不修改yggdrasil
     ```
     omcsl purpur.jar 4G gc8
     ```
-  - 分配4G的堆，自动选择GC，修改yggdrasil为littleskin
+  - 分配4G的堆，自动选择gc，修改yggdrasil为littleskin
     ```
     omcsl purpur.jar 4G auto ls
     ```
-  - 分配4G的堆，选择GC8，修改yggdrasil为littleskin
+  - 分配4G的堆，选择gc8，修改yggdrasil为littleskin
     ```
     omcsl purpur.jar 4G gc8 ls
     ```
