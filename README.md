@@ -6,17 +6,17 @@
 
 一个自动化选择MC通用优化的启动脚本，使用自适应公式根据可用资源计算低暂停与总负载的平衡点。<br/>
 
-## 讲解汇总
+# 讲解汇总
 
 - [运行效果](./readme/test-summary.md)
 - [对比Aikar's Flags](./readme/aikars-g1gc.md)
 - [经验总结](./readme/my-gc.md)
 
-## 计划功能
+# 计划功能
 
 - Linux脚本加入自动判断大页开关来启用透明大页
 
-## 安装
+# 安装
 
 1. 下载仓库
 ```
@@ -24,7 +24,7 @@ git clone https://github.com/Yukiriri/OMCSL.git
 ```
 2. 将仓库中bin目录添加到环境变量（可选）
 
-## 启动
+# 启动
 
 推荐JDK：
 - [Adoptium JDK](https://adoptium.net/zh-CN/temurin/releases/)
@@ -77,7 +77,7 @@ git clone https://github.com/Yukiriri/OMCSL.git
       omcsl purpur.jar 4G
       ```
 
-## 更新
+# 更新
 
 ```
 cd OMCSL
@@ -92,7 +92,7 @@ git pull
 - [https://pdai.tech/md/java/jvm/java-jvm-gc-g1.html](https://pdai.tech/md/java/jvm/java-jvm-gc-g1.html)
 - [ZGC OpenJDK Wiki](https://wiki.openjdk.org/display/zgc)
 
-## 无用的吐槽
+### 无用的吐槽
 
 Java/JVM的发展理念就是让一切代码变得宝宝巴士，好处是少掉几根头发，坏处是所有瓶颈因此栽在这<br/>
 要不是因为MC，估计我这辈子也不会去深入Java这一遭（）<br/>
