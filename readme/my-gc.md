@@ -13,7 +13,7 @@ Java进程所包含的内存有
   - 可以使用[spark](https://spark.lucko.me/download)采集并导出插件/MOD占用耗时堆栈图，找出tick占用高的堆栈顺序里最先出现的插件/模组
 
 ## 我的G1GC调优侧重
-最大化削峰，让GC的CPU占用均匀，把Mixed GC的次数控制在最少，尽可能拿最少的暂停时间去交换这些好处
+最大化削峰，让GC的CPU占用均匀，把Mixed GC的次数控制在最少，尽可能用最少的暂停时间去换这些目的
 
 ## 我的G1GC参数讲解
 - -XX:MaxGCPauseMillis=100 <br/>
