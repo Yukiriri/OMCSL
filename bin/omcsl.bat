@@ -67,7 +67,9 @@ if %JAVA_VER% GEQ 9 (
   set JAVA_OPTS=@%gc_flags% %JAVA_OPTS% !yggdrasil_flags!
 ) else (
   for /f "delims=" %%i in (%gc_flags% %yggdrasil_flags%) do set JAVA_OPTS=!JAVA_OPTS! %%i
+  set JAVA_OPTS=!JAVA_OPTS! -XX:MaxTenuringThreshold=15
 )
+
 
 if "%OMCSL_DEBUG%" == "" (
   set OMCSL_DEBUG=0
