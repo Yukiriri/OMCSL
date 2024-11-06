@@ -45,7 +45,7 @@ if "%gc_policy%" == "auto" (
 )
 if "%gc_policy:~0,3%" == "gc8" (
   set gc_flags=%~dp0\..\flags\GC8.txt
-  set /a survivor_size_mb=32+%NUMBER_OF_PROCESSORS%*16
+  set /a survivor_size_mb=64+%NUMBER_OF_PROCESSORS%*16
   set /a SurvivorRatio=%mem_size_mb%/3/!survivor_size_mb! >nul
   if !SurvivorRatio! LSS 1 set SurvivorRatio=1
   set JAVA_OPTS=!JAVA_OPTS! -XX:SurvivorRatio=!SurvivorRatio! -XX:G1ConcRefinementThreads=%NUMBER_OF_PROCESSORS%
