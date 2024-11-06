@@ -18,11 +18,11 @@
 
 ## 安装
 
-1.下载仓库
+1. 下载仓库
 ```
 git clone https://github.com/Yukiriri/OMCSL.git
 ```
-2.将仓库中bin目录添加到环境变量（可选）
+2. 将仓库中bin目录添加到环境变量（可选）
 
 ## 启动
 
@@ -42,6 +42,7 @@ git clone https://github.com/Yukiriri/OMCSL.git
   - `gc21c`：使用Java21开始可用的GC预设，以更高CPU占用把堆内存水位控制在最低
 - `yggdrasil`：可选以下（区分大小写）：
   - `ls`：修改yggdrasil为littleskin
+> [!IMPORTANT]
 > 使用`yggdrasil`参数需要在上级目录放置`authlib-injector.jar`
 
 环境变量参数：
