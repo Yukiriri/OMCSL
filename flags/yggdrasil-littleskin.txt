@@ -1,0 +1,5 @@
+-javaagent:../authlib-injector.jar=https://littleskin.cn/api/yggdrasil
+-Dauthlibinjector.noLogFile
+-Dauthlibinjector.disableHttpd
+-Dauthlibinjector.profileKey=disabled
+-Dauthlibinjector.usernameCheck=enabled

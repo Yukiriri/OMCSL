@@ -1,0 +1,101 @@
+#!/bin/bash
+#cmd arg: <jar> <Xmx> [<GC> [yggdrasil]]
+#env arg: [JAVA_BIN]
+
+shell_dir=$(cd $(dirname $0); pwd)
+if [[ "$JAVA_BIN" == "" ]]; then
+  JAVA_BIN=java
+fi
+
+if [[ "$JAVA_VER" == "" ]]; then 
+  v=$($JAVA_BIN -version 2>&1 | grep "build")
+  if [[ $(echo $v | grep "build 21") != "" ]]; then JAVA_VER=21; fi
+  if [[ $(echo $v | grep "build 17") != "" ]]; then JAVA_VER=17; fi
+  if [[ $(echo $v | grep "build 11") != "" ]]; then JAVA_VER=11; fi
+  if [[ $(echo $v | grep "build 1.8") != "" ]]; then JAVA_VER=8; fi
+fi
+
+if [[ "$JAVA_VER" == "" ]]; then
+  echo [OMCSL][ERROR]: JAVA_BIN error
+  exit
+fi
+
+core_count=$(cat /proc/cpuinfo | grep "processor" | wc -l)
+mem_unit=${2:0-1:1}
+mem_amount=${2%$mem_unit}
+mem_size_mb=$mem_amount
+if [[ "$mem_unit" == "G" ]]; then mem_size_mb=$(($mem_amount*1024)); fi
+
+JAVA_OPTS="-XX:ConcGCThreads=$core_count -XX:ParallelGCThreads=$core_count -XX:-UseDynamicNumberOfGCThreads"
+if [[ $JAVA_VER -ge 13 ]]; then
+  SoftMaxHeapSize=$(($mem_size_mb/10*9))
+  JAVA_OPTS+=" -XX:SoftMaxHeapSize=$SoftMaxHeapSize""M"
+fi
+if [[ $JAVA_VER -ge 17 ]]; then
+  JAVA_OPTS+=" --add-modules=jdk.incubator.vector"
+fi
+
+gc_policy=$3
+if [[ "$gc_policy" == "" ]]; then gc_policy="auto"; fi
+if [[ "$gc_policy" == "auto" ]]; then
+  gc_policy=gc8
+  if [[ $JAVA_VER -ge 21 ]] && [[ $core_count -ge 4 ]] && [[ $mem_size_mb -ge 8192 ]]; then
+    gc_policy=gc21
+  fi
+fi
+if [[ "${gc_policy:0:3}" == "gc8" ]]; then
+  gc_flags=$shell_dir/../flags/GC8.txt
+  survivor_size_mb=$((64+$core_count*16))
+  SurvivorRatio=$(($mem_size_mb/3/$survivor_size_mb))
+  if [[ $SurvivorRatio -lt 1 ]]; then SurvivorRatio=1; fi
+  JAVA_OPTS+=" -XX:SurvivorRatio=$SurvivorRatio -XX:G1ConcRefinementThreads=$core_count"
+fi
+if [[ "${gc_policy:0:4}" == "gc11" ]]; then
+  gc_flags=$shell_dir/../flags/GC11.txt
+fi
+if [[ "${gc_policy:0:4}" == "gc21" ]]; then
+  gc_flags=$shell_dir/../flags/GC21.txt
+fi
+if [[ "${gc_policy:0:5}" == "gc21c" ]]; then
+  JAVA_OPTS+=" -XX:ZCollectionIntervalMinor=1.5"
+fi
+
+if [[ "$4" == "ls" ]]; then yggdrasil_flags=$shell_dir/../flags/yggdrasil-littleskin.txt; fi
+
+if [[ $JAVA_VER -ge 9 ]]; then
+  if [[ "$yggdrasil_flags" != "" ]]; then yggdrasil_flags="@$yggdrasil_flags"; fi
+  JAVA_OPTS="@$gc_flags $JAVA_OPTS $yggdrasil_flags"
+else
+  if [[ "$yggdrasil_flags" == "" ]]; then yggdrasil_flags="/dev/null"; fi
+  JAVA_OPTS="$(<$gc_flags) $JAVA_OPTS -XX:MaxTenuringThreshold=15 $(<$yggdrasil_flags)"
+fi
+
+if [[ "$OMCSL_DEBUG" == "" ]]; then
+  OMCSL_DEBUG=0
+fi
+if [[ $OMCSL_DEBUG -ge 3 ]]; then
+  JAVA_OPTS+=" -XX:-PerfDisableSharedMem"
+fi
+if [[ $OMCSL_DEBUG -ge 2 && $JAVA_VER -ge 11 ]]; then
+  if [[ ! -d "logs/gc" ]]; then mkdir logs/gc; fi
+  if [[ "${gc_policy:0:3}" == "gc8" ]];  then gc_log_type="gc,gc+phases,gc+marking"; fi
+  if [[ "${gc_policy:0:4}" == "gc11" ]]; then gc_log_type="gc,gc+ergo"; fi
+  if [[ "${gc_policy:0:4}" == "gc21" ]]; then gc_log_type="gc+phases,gc+stats"; fi
+  debug_opts+=" -Xlog:$gc_log_type:file="logs/gc/phases.log"::filecount=10"
+fi
+if [[ $OMCSL_DEBUG -ge 1 ]]; then
+  echo --------------------------------------------------
+  echo [OMCSL][DEBUG]: JAVA_BIN   = $JAVA_BIN
+  echo [OMCSL][DEBUG]: JAVA_VER   = $JAVA_VER
+  echo [OMCSL][DEBUG]: jar        = $1
+  echo [OMCSL][DEBUG]: Xmx        = $2
+  echo [OMCSL][DEBUG]: JAVA_OPTS  = $JAVA_OPTS
+  echo [OMCSL][DEBUG]: debug_opts = $debug_opts
+  echo --------------------------------------------------
+  $JAVA_BIN -Xmx$2 $JAVA_OPTS -XX:+PrintFlagsFinal 2>/dev/null | grep "command line"
+  echo --------------------------------------------------
+fi
+
+boot_core="$1"
+if [[ "${boot_core:0-3,3}" == "jar" ]]; then boot_core="-jar $boot_core"; fi
+$JAVA_BIN -Xms$2 -Xmx$2 $JAVA_OPTS $debug_opts $boot_core nogui
