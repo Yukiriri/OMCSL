@@ -1,6 +1,6 @@
 <div align="center">
 
-![Banner](https://socialify.git.ci/Yukiriri/OMCSL/image?description=1&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)
+[![Banner](https://socialify.git.ci/Yukiriri/OMCSL/image?description=1&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)]()
 
 [![Stars](https://img.shields.io/github/stars/Yukiriri/OMCSL?style=for-the-badge)](
     https://github.com/Yukiriri/OMCSL/stargazers
