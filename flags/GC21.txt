@@ -1,0 +1,15 @@
+-XX:+IgnoreUnrecognizedVMOptions
+-XX:+UnlockExperimentalVMOptions
+-Dfile.encoding=UTF-8
+-Djava.awt.headless=true
+-XX:+AlwaysPreTouch
+-XX:+DisableExplicitGC
+-XX:+PerfDisableSharedMem
+-XX:MetaspaceSize=384M
+-XX:InitialCodeCacheSize=192M
+-XX:ReservedCodeCacheSize=512M
+-XX:MaxInlineSize=512
+
+-XX:+UseZGC
+-XX:-ZProactive
+-XX:+ZGenerational
