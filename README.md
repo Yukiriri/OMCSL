@@ -1,6 +1,13 @@
 <div align="center">
 
-![OMCSL](https://socialify.git.ci/Yukiriri/OMCSL/image?description=1&font=Inter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
+![Banner](https://socialify.git.ci/Yukiriri/OMCSL/image?description=1&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)
+
+![Stars](https://img.shields.io/github/stars/Yukiriri/OMCSL?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/Yukiriri/OMCSL?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/Yukiriri/OMCSL?style=for-the-badge)
+![Pull](https://img.shields.io/github/issues-pr/Yukiriri/OMCSL?style=for-the-badge)
+
+![Code Size](https://img.shields.io/github/languages/code-size/Yukiriri/OMCSL?style=for-the-badge)
 
 </div>
 
