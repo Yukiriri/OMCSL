@@ -15,7 +15,7 @@
     https://github.com/Yukiriri/OMCSL/pulls
 )
 
-[![Code Size](https://img.shields.io/github/languages/code-size/Yukiriri/OMCSL?style=for-the-badge)]()
+[![Repo size](https://img.shields.io/github/repo-size/Yukiriri/OMCSL?style=for-the-badge)]()
 
 一个自动化选择MC通用优化的启动脚本，使用自适应公式根据可用资源计算低暂停与总负载的平衡点。  
 如果遇到问题或者有更好的调优，欢迎提出。  
