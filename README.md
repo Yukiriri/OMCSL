@@ -9,10 +9,10 @@
 
 ![Code Size](https://img.shields.io/github/languages/code-size/Yukiriri/OMCSL?style=for-the-badge)
 
-</div>
-
 一个自动化选择MC通用优化的启动脚本，使用自适应公式根据可用资源计算低暂停与总负载的平衡点。  
 如果遇到问题或者有更好的调优，欢迎提出。  
+
+</div>
 
 # 讲解汇总
 - [运行效果](./md/test-summary.md)
@@ -96,7 +96,7 @@ cd OMCSL
 git pull
 ```
 > [!IMPORTANT]  
-> 在Windows平台需要把实例关闭后再更新，这个涉及到win对bat读取的逆天机制  
+> 在Windows平台需要把实例关闭后再更新，这个涉及到Windows的bat逆天读取机制  
 
 ## 学习参考
 - [Aikar's Flags](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft)
