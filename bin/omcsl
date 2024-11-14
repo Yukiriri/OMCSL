@@ -2,7 +2,7 @@
 #cmd arg: <jar> <Xmx> [<GC> [yggdrasil]]
 #env arg: [JAVA_BIN]
 
-shell_dir=$(cd $(dirname $0); pwd)
+shell_dir=$(cd $(dirname ${BASH_SOURCE[0]}); pwd)
 if [[ "$JAVA_BIN" == "" ]]; then
   JAVA_BIN=java
 fi
@@ -21,8 +21,8 @@ if [[ "$JAVA_VER" == "" ]]; then
 fi
 
 core_count=$(cat /proc/cpuinfo | grep "processor" | wc -l)
-mem_unit=${2:0-1:1}
-mem_amount=${2%$mem_unit}
+mem_unit=${2:0-1}
+mem_amount=${2:0:-1}
 mem_size_mb=$mem_amount
 if [[ "$mem_unit" == "G" ]]; then mem_size_mb=$(($mem_amount*1024)); fi
 
@@ -97,5 +97,5 @@ if [[ $OMCSL_DEBUG -ge 1 ]]; then
 fi
 
 boot_core="$1"
-if [[ "${boot_core:0-3,3}" == "jar" ]]; then boot_core="-jar $boot_core"; fi
+if [[ "${boot_core:0-3}" == "jar" ]]; then boot_core="-jar $boot_core"; fi
 $JAVA_BIN -Xms$2 -Xmx$2 $JAVA_OPTS $debug_opts $boot_core nogui
