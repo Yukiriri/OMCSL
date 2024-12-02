@@ -2,19 +2,6 @@
 
 [![Banner](https://socialify.git.ci/Yukiriri/OMCSL/image?description=1&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)]()
 
-[![Stars](https://img.shields.io/github/stars/Yukiriri/OMCSL?style=for-the-badge)](
-    https://github.com/Yukiriri/OMCSL/stargazers
-)
-[![Forks](https://img.shields.io/github/forks/Yukiriri/OMCSL?style=for-the-badge)](
-    https://github.com/Yukiriri/OMCSL/forks
-)
-[![Issues](https://img.shields.io/github/issues/Yukiriri/OMCSL?style=for-the-badge)](
-    https://github.com/Yukiriri/OMCSL/issues
-)
-[![Pull](https://img.shields.io/github/issues-pr/Yukiriri/OMCSL?style=for-the-badge)](
-    https://github.com/Yukiriri/OMCSL/pulls
-)
-
 [![Repo size](https://img.shields.io/github/repo-size/Yukiriri/OMCSL?style=for-the-badge)]()
 
 一个自动化选择MC通用优化的启动脚本，使用自适应公式根据可用资源计算低暂停与总负载的平衡点。  
