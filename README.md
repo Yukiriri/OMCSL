@@ -19,71 +19,71 @@
 
 # 安装
 1. 下载仓库
-    ```
-    git clone -b stable https://github.com/Yukiriri/OMCSL.git
-    ```
+  ```
+  git clone -b stable https://github.com/Yukiriri/OMCSL.git
+  ```
 2. （可选）将仓库中bin目录添加到环境变量
 
 # 启动
 - ## 推荐JDK
-    - [Adoptium JDK](https://adoptium.net/zh-CN/temurin/releases/)
-    - [Liberica JDK](https://bell-sw.com/pages/downloads/)
-    - [Zulu JDK](https://www.azul.com/downloads/?package=jdk#zulu)
+  - [Adoptium JDK](https://adoptium.net/zh-CN/temurin/releases/)
+  - [Liberica JDK](https://bell-sw.com/pages/downloads/)
+  - [Zulu JDK](https://www.azul.com/downloads/?package=jdk#zulu)
 
 - ## 命令格式
-    ### `omcsl` \<`core`\> \<`Xmx`\> [ \<`GC`\> [ `yggdrasil` ] ]
-    - `core`：服务端jar文件名 或者 MOD加载器的启动@txt
-    - `Xmx`：堆内存大小
-    - `GC`：可选以下（区分大小写）：
-        - `auto`  
-            使用脚本内的简单判断自动选择（默认）  
-        - `gc8`  
-            使用Java8开始可用的GC预设  
-            有一定的暂停时间，GC负载全程都比较低  
-        - `gc11`  
-            使用Java11开始可用的GC预设  
-            暂停时间基本上在3毫秒，GC负载高  
-        - `gc21`  
-            使用Java21开始可用的GC预设  
-            暂停时间基本上在0.1毫秒，GC负载只高了一些  
-        - `gc21c`  
-            和上面的gc21相同  
-            但以更高CPU占用把堆内存水位控制在最低  
-    - `yggdrasil`：可选以下（区分大小写）：  
-        - `ls`：修改yggdrasil为littleskin  
+  ### `omcsl` \<`core`\> \<`Xmx`\> [ \<`GC`\> [ `yggdrasil` ] ]
+  - `core`：服务端jar文件名 或者 MOD加载器的启动@txt
+  - `Xmx`：堆内存大小
+  - `GC`：可选以下（区分大小写）：
+    - `auto`  
+      使用脚本内的简单判断自动选择（默认）  
+    - `gc8`  
+      使用Java8开始可用的GC预设  
+      有一定的暂停时间，GC负载全程都比较低  
+    - `gc11`  
+      使用Java11开始可用的GC预设  
+      暂停时间基本上在3毫秒，GC负载高  
+    - `gc21`  
+      使用Java21开始可用的GC预设  
+      暂停时间基本上在0.1毫秒，GC负载只高了一些  
+    - `gc21c`  
+      和上面的gc21相同  
+      但以更高CPU占用把堆内存水位控制在最低  
+  - `yggdrasil`：可选以下（区分大小写）：  
+    - `ls`：修改yggdrasil为littleskin  
 
 > [!IMPORTANT]  
 > 1. 由于还没有编写系统版本判断，如果你有原因不能使用新版本系统，请手动把`GC`参数填写为`gc8`  
 > 2. 使用`yggdrasil`参数需要在上级目录放置`authlib-injector.jar`  
 
 - ## 命令样例
-    - 分配4G的堆，自动选择gc，不修改yggdrasil
-        ```
-        omcsl purpur.jar 4G
-        ```
-    - 分配4G的堆，选择gc8，不修改yggdrasil
-        ```
-        omcsl purpur.jar 4G gc8
-        ```
-    - 分配4G的堆，自动选择gc，修改yggdrasil为littleskin
-        ```
-        omcsl purpur.jar 4G auto ls
-        ```
-    - 分配4G的堆，选择gc8，修改yggdrasil为littleskin
-        ```
-        omcsl purpur.jar 4G gc8 ls
-        ```
-    - 使用环境变量
-        - Windows bat脚本
-            ```
-            set JAVA_BIN=C:\Java\bin\java
-            omcsl purpur.jar 4G
-            ```
-        - Linux shell脚本
-            ```
-            export JAVA_BIN=/opt/Java/bin/java
-            omcsl purpur.jar 4G
-            ```
+  - 分配4G的堆，自动选择gc，不修改yggdrasil
+    ```
+    omcsl purpur.jar 4G
+    ```
+  - 分配4G的堆，选择gc8，不修改yggdrasil
+    ```
+    omcsl purpur.jar 4G gc8
+    ```
+  - 分配4G的堆，自动选择gc，修改yggdrasil为littleskin
+    ```
+    omcsl purpur.jar 4G auto ls
+    ```
+  - 分配4G的堆，选择gc8，修改yggdrasil为littleskin
+    ```
+    omcsl purpur.jar 4G gc8 ls
+    ```
+  - 使用环境变量
+    - Windows bat脚本
+      ```
+      set JAVA_BIN=C:\Java\bin\java
+      omcsl purpur.jar 4G
+      ```
+    - Linux shell脚本
+      ```
+      export JAVA_BIN=/opt/Java/bin/java
+      omcsl purpur.jar 4G
+      ```
 
 # 更新
 ```

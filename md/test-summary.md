@@ -16,6 +16,7 @@ JDK：Liberica JDK 21
 - ### 16G
 ![](./img/gc8-16G.png)
 
+> [!NOTE]  
 > GC日志中平均暂停时间40ms  
 
 > [!TIP]  
@@ -27,6 +28,7 @@ JDK：Liberica JDK 21
 - ### 16G
 ![](./img/gc11-16G.png)
 
+> [!NOTE]  
 > GC日志中平均暂停时间0.3ms  
 
 > [!NOTE]  
@@ -38,10 +40,12 @@ JDK：Liberica JDK 21
 - ### 16G
 ![](./img/gc21-16G.png)
 
+> [!NOTE]  
 > GC日志中平均暂停时间0.01ms  
 
 # gc21c表现
 - ### 16G
 ![](./img/gc21c-16G.png)
 
+> [!NOTE]  
 > 只在高内存分配中见效明显  
