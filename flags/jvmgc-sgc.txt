@@ -5,16 +5,17 @@
 -XX:+AlwaysPreTouch
 -XX:+ExplicitGCInvokesConcurrent
 -XX:ReservedCodeCacheSize=384M
+-XX:MinTLABSize=256K
 
 -XX:+UseShenandoahGC
 -XX:ShenandoahGCMode=generational
 -XX:ShenandoahGCHeuristics=static
--XX:ShenandoahPacingMaxDelay=5
+-XX:ShenandoahAllocSpikeFactor=2
+-XX:ShenandoahPacingMaxDelay=25
 
 -XX:ShenandoahMinYoungPercentage=1
--XX:ShenandoahMaxYoungPercentage=100
--XX:-ShenandoahGenerationalAdaptiveTenuring
--XX:ShenandoahGenerationalMaxTenuringAge=1
+-XX:ShenandoahMaxYoungPercentage=90
+-XX:ShenandoahGenerationalTenuringMortalityRateThreshold=0.1
 -XX:ShenandoahMinRegionSize=16M
 
 -XX:ShenandoahGarbageThreshold=20
