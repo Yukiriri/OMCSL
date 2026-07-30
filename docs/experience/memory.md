@@ -9,7 +9,7 @@
   - Code Cache
   - ...
 - ### Native API内存
-  - OpenGL资源管理使用的内存
+  - OpenGL/Vulkan资源管理使用的内存
   - 一些罕见MOD使用JNI操作的内存
 
 # 估算方式参考
