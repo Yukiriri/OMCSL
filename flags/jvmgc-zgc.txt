@@ -5,10 +5,12 @@
 -XX:+AlwaysPreTouch
 -XX:+ExplicitGCInvokesConcurrent
 -XX:ReservedCodeCacheSize=384M
+-XX:MinTLABSize=256K
 
 -XX:+UseZGC
 -XX:+ZGenerational
 -XX:-ZProactive
+-XX:ZAllocationSpikeTolerance=2
 
 -XX:ZYoungCompactionLimit=20
 -XX:ZFragmentationLimit=20
