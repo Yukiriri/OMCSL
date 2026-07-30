@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'flags/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'flags/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Generate Version & Notes
+        id: generate
+        shell: pwsh
+        run: |
+          .\gen-version.ps1
+          .\gen-notes.ps1
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ steps.generate.outputs.release_ver }}
+          name: ${{ steps.generate.outputs.release_ver }}
+          body_path: CHANGELOG.md
+          files: |
+            flags/*.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
