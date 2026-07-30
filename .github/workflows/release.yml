@@ -26,8 +26,8 @@ jobs:
         id: generate
         shell: pwsh
         run: |
-          .\gen-version.ps1
-          .\gen-notes.ps1
+          ./.github/workflows/gen-version.ps1
+          ./.github/workflows/gen-notes.ps1
 
       - name: Create Release
         uses: softprops/action-gh-release@v3

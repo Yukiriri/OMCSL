@@ -7,7 +7,7 @@ if ($previous_tag -ne $null -and $previous_tag -ne '') {
 }
 $repo_url = "$env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY"
 $release_body = $(git log "$previous_tag" --pretty=format:"- [``%h``]($repo_url/commit/%H): %s  %n")
-$release_body = $release_body -replace "新增", "🔨新增"
+$release_body = $release_body -replace "新增|更新", "🔨新增"
 $release_body = $release_body -replace "删除", "✂️删除"
 $release_body = $release_body -replace "修改|调整", "🔧修改"
 $release_body = $release_body -replace "修复", "🪛修复"
