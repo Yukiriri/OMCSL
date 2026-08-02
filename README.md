@@ -4,13 +4,13 @@
 祝你能收获更多快乐  
 
 ## 用途一览
-[G1GC  ]: ../flags/jvmgc-g1gc.txt
-[G1GC-C]: ../flags/jvmgc-g1gc-c.txt
-[G1GC-M]: ../flags/jvmgc-g1gc-m.txt
-[ZGC   ]: ../flags/jvmgc-zgc.txt
-[ZGC-C ]: ../flags/jvmgc-zgc-c.txt
-[SGC   ]: ../flags/jvmgc-sgc.txt
-[SGC-C ]: ../flags/jvmgc-sgc-c.txt
+[G1GC  ]: ./flags/jvmgc-g1gc.txt
+[G1GC-C]: ./flags/jvmgc-g1gc-c.txt
+[G1GC-M]: ./flags/jvmgc-g1gc-m.txt
+[ZGC   ]: ./flags/jvmgc-zgc.txt
+[ZGC-C ]: ./flags/jvmgc-zgc-c.txt
+[SGC   ]: ./flags/jvmgc-sgc.txt
+[SGC-C ]: ./flags/jvmgc-sgc-c.txt
 
 | JVM GC参数 | STW程度         | 运行表现     | JDK要求 | 适用场景                   |
 | :--------- | :-------------- | :----------- | :------ | :------------------------- |
@@ -23,7 +23,7 @@
 | [SGC-C]    | 无感 & 偶尔轻度 | 积极返还内存 | JDK25+  | 客户端                     |
 
 - ## 已有的统计数据
-  [/docs/statistical/](./statistical/)
+  [/docs/statistical/](./docs/statistical/)
 
 - ## 选择参考
   - ## 低主频
@@ -75,7 +75,7 @@
 > 推荐使用LTS版本，可以有更广范围的旧版MC兼容性  
 
 ## 经验心得
-- [内存估算](./experience/memory.md)
+- [内存估算](./docs/experience/memory.md)
 
 ## Credits
 - https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft
