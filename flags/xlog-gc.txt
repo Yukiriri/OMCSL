@@ -1,17 +1,15 @@
--Xlog:gc+init=debug:file="logs/xlog-gc+init-[debug].log":uptimemillis:filecount=1
--Xlog:gc+stats=debug:file="logs/xlog-gc+stats-[debug].log":uptimemillis:filecount=1
+-Xlog:gc+init=debug:file="logs/xlog-gc+init[debug].log":uptimemillis:filecount=1,filesize=10M
+-Xlog:gc+stats=debug:file="logs/xlog-gc+stats[debug].log":uptimemillis:filecount=1,filesize=10M
 
--Xlog:gc:file="logs/xlog-gc.log":uptimemillis:filecount=1
--Xlog:gc+phases=debug:file="logs/xlog-gc+phases[debug].log":uptimemillis:filecount=1
--Xlog:gc+marking=debug:file="logs/xlog-gc+marking[debug].log":uptimemillis:filecount=1
--Xlog:gc+refine+stats=debug:file="logs/xlog-gc+refine+stats[debug].log":uptimemillis:filecount=1
--Xlog:gc+tlab=debug:file="logs/xlog-gc+tlab[debug].log":uptimemillis:filecount=1
--Xlog:gc+plab=debug:file="logs/xlog-gc+plab[debug].log":uptimemillis:filecount=1
+-Xlog:gc:file="logs/xlog-gc.log":uptimemillis:filecount=1,filesize=10M
+-Xlog:gc+phases=debug:file="logs/xlog-gc+phases[debug].log":uptimemillis:filecount=1,filesize=10M
+-Xlog:gc+marking=debug:file="logs/xlog-gc+marking[debug].log":uptimemillis:filecount=1,filesize=10M
+-Xlog:gc+refine+stats=debug:file="logs/xlog-gc+refine+stats[debug].log":uptimemillis:filecount=1,filesize=10M
+-Xlog:gc+mmu=debug:file="logs/xlog-gc+mmu[debug].log":uptimemillis:filecount=1,filesize=10M
 
--Xlog:gc+heap=debug:file="logs/xlog-gc+heap[debug].log":uptimemillis:filecount=1
--Xlog:gc+age=debug:file="logs/xlog-gc+age[debug].log":uptimemillis:filecount=1
--Xlog:gc+cset=debug:file="logs/xlog-gc+cset[debug].log":uptimemillis:filecount=1
--Xlog:gc+mmu=debug:file="logs/xlog-gc+mmu[debug].log":uptimemillis:filecount=1
+-Xlog:gc+heap=debug:file="logs/xlog-gc+heap[debug].log":uptimemillis:filecount=1,filesize=10M
+-Xlog:gc+age=debug:file="logs/xlog-gc+age[debug].log":uptimemillis:filecount=1,filesize=10M
+-Xlog:gc+tlab=debug:file="logs/xlog-gc+tlab[debug].log":uptimemillis:filecount=1,filesize=10M
 
--Xlog:gc+metaspace:file="logs/xlog-gc+metaspace.log":uptimemillis:filecount=1
--Xlog:codecache:file="logs/xlog-codecache.log":uptimemillis:filecount=1
+-Xlog:gc+metaspace:file="logs/xlog-gc+metaspace.log":uptimemillis:filecount=1,filesize=10M
+-Xlog:codecache:file="logs/xlog-codecache.log":uptimemillis:filecount=1,filesize=10M
