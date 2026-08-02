@@ -1,7 +1,6 @@
 $date = Get-Date -Format 'yyyy.MM.dd'
-$build_num   = ($env:GITHUB_RUN_NUMBER -as [int]) % 100
-$bin_ver     = "$date.$build_num"
-$release_ver = "$date-$build_num"
+$bin_ver     = "$date.0"
+$release_ver = "$date+$env:GITHUB_RUN_NUMBER"
 
 Write-Output bin_ver=$bin_ver
 Write-Output release_ver=$release_ver
