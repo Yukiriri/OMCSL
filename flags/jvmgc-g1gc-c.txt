@@ -7,28 +7,29 @@
 -XX:ReservedCodeCacheSize=384M
 -XX:MinTLABSize=256K
 
+-XX:GCTimeRatio=4
 -XX:+UseG1GC
 -XX:+ParallelRefProcEnabled
 -XX:MaxGCPauseMillis=25
 -XX:GCPauseIntervalMillis=50
 -XX:G1ConcMarkStepDurationMillis=6
--XX:G1RSetUpdatingPauseTimePercent=0
+-XX:G1RSetUpdatingPauseTimePercent=25
 -XX:G1SATBBufferEnqueueingThresholdPercent=33
 
+-XX:G1HeapRegionSize=16M
 -XX:G1NewSizePercent=1
 -XX:G1MaxNewSizePercent=90
--XX:G1ReservePercent=5
--XX:SurvivorRatio=50
+-XX:SurvivorRatio=25
 -XX:MaxTenuringThreshold=1
 
--XX:G1HeapRegionSize=16M
--XX:InitiatingHeapOccupancyPercent=66
+-XX:G1MixedGCLiveThresholdPercent=80
 -XX:G1MixedGCCountTarget=5
 -XX:G1OldCSetRegionThresholdPercent=10
--XX:G1HeapWastePercent=10
+-XX:G1HeapWastePercent=5
+-XX:InitiatingHeapOccupancyPercent=60
 
 -XX:G1ExpandByPercentOfAvailable=0
+-XX:G1PeriodicGCInterval=6000
 -XX:MinHeapFreeRatio=16
 -XX:MaxHeapFreeRatio=33
--XX:G1PeriodicGCInterval=6000
 -XX:MaxDirectMemorySize=128G

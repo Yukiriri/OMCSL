@@ -15,7 +15,7 @@
 -XX:ZYoungCompactionLimit=20
 -XX:ZFragmentationLimit=20
 
--XX:ZUncommitDelay=6
 -XX:ZCollectionIntervalMinor=1.5
 -XX:ZCollectionIntervalMajor=30.0
+-XX:ZUncommitDelay=6
 -XX:MaxDirectMemorySize=128G

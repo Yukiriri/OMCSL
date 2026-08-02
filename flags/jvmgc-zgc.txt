@@ -14,3 +14,6 @@
 
 -XX:ZYoungCompactionLimit=20
 -XX:ZFragmentationLimit=20
+
+-XX:ZCollectionIntervalMinor=600.0
+-XX:ZCollectionIntervalMajor=600.0

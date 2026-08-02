@@ -7,21 +7,22 @@
 -XX:ReservedCodeCacheSize=384M
 -XX:MinTLABSize=256K
 
+-XX:GCTimeRatio=4
 -XX:+UseShenandoahGC
 -XX:ShenandoahGCMode=generational
 -XX:ShenandoahGCHeuristics=static
 -XX:ShenandoahAllocSpikeFactor=2
 -XX:ShenandoahPacingMaxDelay=25
 
+-XX:ShenandoahMinRegionSize=16M
 -XX:ShenandoahMinYoungPercentage=1
 -XX:ShenandoahMaxYoungPercentage=90
--XX:ShenandoahGenerationalTenuringMortalityRateThreshold=0.1
--XX:ShenandoahMinRegionSize=16M
 
+-XX:ShenandoahGenerationalTenuringMortalityRateThreshold=0.1
 -XX:ShenandoahGarbageThreshold=20
 -XX:ShenandoahOldGarbageThreshold=20
 
--XX:ShenandoahUncommitDelay=6000
 -XX:ShenandoahGuaranteedYoungGCInterval=1500
 -XX:ShenandoahGuaranteedOldGCInterval=30000
+-XX:ShenandoahUncommitDelay=6000
 -XX:MaxDirectMemorySize=128G
