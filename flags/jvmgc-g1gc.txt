@@ -1,14 +1,11 @@
 -XX:+IgnoreUnrecognizedVMOptions
 -XX:+UnlockExperimentalVMOptions
--Dfile.encoding=UTF-8
 
 -XX:+AlwaysPreTouch
--XX:+ExplicitGCInvokesConcurrent
--XX:ReservedCodeCacheSize=384M
--XX:MinTLABSize=256K
-
 -XX:GCTimeRatio=4
+
 -XX:+UseG1GC
+-XX:+ExplicitGCInvokesConcurrent
 -XX:+ParallelRefProcEnabled
 -XX:MaxGCPauseMillis=25
 -XX:GCPauseIntervalMillis=50

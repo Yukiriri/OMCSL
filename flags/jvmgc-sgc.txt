@@ -1,13 +1,9 @@
 -XX:+IgnoreUnrecognizedVMOptions
 -XX:+UnlockExperimentalVMOptions
--Dfile.encoding=UTF-8
 
 -XX:+AlwaysPreTouch
--XX:+ExplicitGCInvokesConcurrent
--XX:ReservedCodeCacheSize=384M
--XX:MinTLABSize=256K
-
 -XX:GCTimeRatio=4
+
 -XX:+UseShenandoahGC
 -XX:ShenandoahGCMode=generational
 -XX:ShenandoahGCHeuristics=static
